@@ -1,0 +1,7 @@
+{
+  "name": "Isekai Store",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
