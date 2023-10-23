@@ -10,7 +10,19 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
+  },  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'sigin',
+    loadChildren: () => import('./sigin/sigin.module').then( m => m.SiginPageModule)
+  },
+  {
+    path: 'reset-pass',
+    loadChildren: () => import('./reset-pass/reset-pass.module').then( m => m.ResetPassPageModule)
+  },
+
 ];
 
 @NgModule({

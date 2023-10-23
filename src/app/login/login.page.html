@@ -7,24 +7,37 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">login</ion-title>
+      <ion-title size="large">Bienvenido a Isekai Store <div><img src="../../assets/icon/logo.png" alt="Logo"></div></ion-title> 
     </ion-toolbar>
   </ion-header>
 </ion-content>
-<br>
+<div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+</div>
+
 <ion-content class="ion-padding">
-  <ion-button id="open-modal" shape="round" expand="block">Open Modal</ion-button>
+  <ion-button id="open-modal" shape="round" expand="block">Iniciar sesión</ion-button>
   <ion-modal [keepContentsMounted]="true" trigger="open-modal" #modal>
     <ng-template>
       <ion-header>
         <ion-toolbar>
           <ion-buttons slot="start">
-            <ion-button (click)="modal.dismiss()">Cancel</ion-button>
+            <ion-button (click)="modal.dismiss()">Cerrar</ion-button>
           </ion-buttons>
-          <ion-title>Modal</ion-title>
+          <ion-title>Iniciar Sesión</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding"> This content was mounted as soon as the modal was created. </ion-content>
+      <ion-content class="ion-padding">  
+      </ion-content>
     </ng-template>
   </ion-modal>
 </ion-content>
