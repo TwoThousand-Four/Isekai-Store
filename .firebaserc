@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "isekaistore-fca38": {
+      "hosting": {
+        "app": [
+          "isekaistore-fca38-bb331"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "isekaistore-fca38"
+  }
+}
