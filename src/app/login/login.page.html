@@ -1,4 +1,4 @@
-<br>
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar color="danger">
@@ -41,14 +41,17 @@
       </ion-header>
       <ion-content class="ion-padding"> 
         <ion-item>
-          <ion-label position="floating">Correo</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input id="input" label="Email" label-placement="floating" fill="outline" placeholder="juanitoperez@gmail.com"type="text" required [(ngModel)]="usuario.email"></ion-input>
         </ion-item> 
+
         <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input id="input" label="Contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" required [(ngModel)]="usuario.password"></ion-input>
         </ion-item>
-        <ion-button class="ion-padding" color="primary">Iniciar sesión</ion-button>
+        
+        <ion-button class="ion-padding" color="primary" (click)="login()" (click)="modal.dismiss()">Iniciar sesión</ion-button> 
+        <ion-button class="ion-padding" color="secondary"  (click)="modal.dismiss()">Registrarse</ion-button> 
+        <br>
+        <a (click)="GoToReset()" (click)="modal.dismiss()">¿Olvidaste tu contraseña?</a>
       </ion-content>
     </ng-template>
   </ion-modal>
