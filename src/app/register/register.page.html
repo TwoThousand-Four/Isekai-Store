@@ -1,13 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
+    <ion-toolbar color="danger">
+      <ion-title size="large">Crea una cuenta<div><img src="../../assets/icon/logo.png" alt="Logo" id="img"></div></ion-title> 
     </ion-toolbar>
   </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-content>
+      <ion-item>
+        <ion-input id="input" label="Nombre" label-placement="floating" fill="outline" placeholder="Juanito Perez"type="text" ></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-input id="input" label="Email" label-placement="floating" fill="outline" placeholder="juanitoperez@gmail.com"type="text" ></ion-input>
+      </ion-item> 
+      <ion-item>
+        <ion-input id="input" label="Contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input id="input" label="Repetir contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" ></ion-input>
+      </ion-item>
+      <ion-button class="ion-padding" color="primary" expand="block">Registrarse</ion-button> 
+    </ion-content> 
+  </ion-content>
 </ion-content>
+
