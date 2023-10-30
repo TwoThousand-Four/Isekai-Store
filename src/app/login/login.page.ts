@@ -58,8 +58,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  GoToSigin(){
-    this.router.navigate(['/sigin']);
+  GoToRegister(){
+    this.router.navigate(['/register']);
   }
   GoToReset(){
     this.router.navigate(['/reset-pass']);

@@ -10,18 +10,23 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
-  },  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'sigin',
-    loadChildren: () => import('./sigin/sigin.module').then( m => m.SiginPageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'reset-pass',
     loadChildren: () => import('./reset-pass/reset-pass.module').then( m => m.ResetPassPageModule)
   },
+  {
+    path: 'assistance',
+    loadChildren: () => import('./assistance/assistance.module').then( m => m.AssistancePageModule)
+  },  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+
 
 ];
 
