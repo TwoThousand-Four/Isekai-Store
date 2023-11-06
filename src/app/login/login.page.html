@@ -1,56 +1,31 @@
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar color="danger">
       <ion-title size="large">Bienvenido!<div><img src="../../assets/icon/logo.png" alt="Logo" id="img"></div></ion-title> 
     </ion-toolbar>
   </ion-header>
-</ion-content>
 
-<div>
-  <ion-card>
-    <ion-card-content>
-        <img src="../../assets/img/fondos/f1.png" alt="">
-    </ion-card-content>
-  </ion-card>
-</div>
-
-<div>
   <ion-card>
     <ion-card-header>
       <ion-card-title>Isekai Store</ion-card-title>
     </ion-card-header>
-
     <ion-card-content>
       Bienvenido a Isekai Store, tu página 100% confiable en figuras coleccionables de anime 🤑
     </ion-card-content>
   </ion-card>
-</div>
-
-<ion-content class="ion-padding">
-  <ion-button id="open-modal" shape="round" expand="block">Iniciar sesión</ion-button>
-  <ion-modal [keepContentsMounted]="true" trigger="open-modal" #modal>
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-button (click)="modal.dismiss()" color="danger">Cerrar</ion-button>
-          </ion-buttons>
-          <ion-title>Iniciar Sesión</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding"> 
-        <ion-item>
-          <ion-input id="input" label="Email" label-placement="floating" fill="outline" placeholder="juanitoperez@gmail.com"type="text" ></ion-input>
-        </ion-item> 
-        <ion-item>
-          <ion-input id="input" label="Contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" ></ion-input>
-        </ion-item>
-        <ion-button class="ion-padding" color="primary" (click)="login()" (click)="modal.dismiss()">Iniciar sesión</ion-button> 
-        <ion-button class="ion-padding" color="secondary" (click)="GoToRegister()" (click)="modal.dismiss()">Registrarse</ion-button> 
-        <br>
-        <a (click)="GoToReset()" (click)="modal.dismiss()">¿Olvidaste tu contraseña?</a>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
+  <ion-content class="ion-padding"> 
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input id="input" fill="outline" placeholder="juanitoperez@gmail.com"type="text" required [(ngModel)]="user.email" ></ion-input>
+    </ion-item> 
+    <br>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input id="input" fill="outline" placeholder="***************"type="password" required [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <ion-button class="ion-padding" color="primary" (click)="login(user)">Iniciar sesión</ion-button> 
+    <ion-button class="ion-padding" color="secondary" [routerLink]="['/register']">Registrarse</ion-button> 
+    <br>
+    <a [routerLink]="['/reset-pass']">¿Olvidaste tu contraseña?</a>
+  </ion-content>
 </ion-content>

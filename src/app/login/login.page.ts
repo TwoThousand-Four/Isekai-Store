@@ -1,21 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import type { IonModal } from '@ionic/angular';
-import { AnimationController } from '@ionic/angular';
-
-interface User{
-  
-  id: Number,
-  nombre: string,
-  Apellido: string,
-  email: string,
-  contrasena: string,
-  rut: string,
-  tipoUser: UserType,
-}
-
-type UserType = 'Cliente' | 'Empleado'
-
+import { User } from "../models/user.model";
+import { LoadingController, NavController, ToastController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-login',
@@ -23,46 +10,55 @@ type UserType = 'Cliente' | 'Empleado'
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  user = {} as User;
+  constructor(private router: Router,
+    private toastCtrl : ToastController,
+    private loadingCtrl : LoadingController,
+    private afAuth : AngularFireAuth,
+    private navCtrl : NavController,) {}
 
-  constructor(private router: Router) {
+  ngOnInit() {}
 
-   }
-   usuario = {
-    email:'',
-    password:''
-  }
+  async login(user : User){
+    if (this.formValidation()) {
+      let loader = await this.loadingCtrl.create({
+        message : "Espere por favor..."
+      })
+      await loader.present();
 
-  usuarios:  User[] = 
-  [ 
-    {
-      id: 1,
-      nombre: "Jeremy",
-      Apellido: "Garrido",
-      email: "ykzjere@gmail.com",
-      contrasena: "jeremy514",
-      rut: "21.535.925-5",
-      tipoUser: "Empleado",
-    },
-    
-  ]
-  login() {
+      try {
+        await this.afAuth.signInWithEmailAndPassword(user.email, user.password).then(data => {
+          console.log(data);
 
-    console.log("email: " + this.usuario.email + " clave: "+ this.usuario.password)
-    this.usuarios.forEach(persona => {
-      if (this.usuario.email==persona.email && this.usuario.password == persona.contrasena)  {
-        this.router.navigate(['/home'])
+          this.navCtrl.navigateRoot("home")
+        })
+
+      } catch (error:any) {
+        error.message = "Usuario no registrado";
+        let errorMsg = error.message || error.getLocalizedMessage();
+
+        this.showToast(errorMsg)
       }
-    });
+      await loader.dismiss();
+    }
   }
 
-  ngOnInit() {
+  formValidation(){
+    if (!this.user.email) {
+      this.showToast("Ingrese un correo electrónico");
+      return false;
+    }
+    if (!this.user.password) {
+      this.showToast("Ingrese una contraseña");
+      return false;
+    }
+    return true;
   }
 
-  GoToRegister(){
-    this.router.navigate(['/register']);
+  showToast(message : string){
+    this.toastCtrl.create({
+      message : message,
+      duration : 5000 // La duración del mensaje es de 5 segundos
+    }).then(toastData => toastData.present());
   }
-  GoToReset(){
-    this.router.navigate(['/reset-pass']);
-  }
-
 }

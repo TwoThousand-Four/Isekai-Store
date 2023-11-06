@@ -63,7 +63,7 @@ export class RegisterPage implements OnInit {
   showToast(message : string){
     this.toastCtrl.create({
       message : message,
-      duration : 5000
+      duration : 5000 // La duración del mensaje es de 5 segundos
     }).then(toastData => toastData.present());
   }
 }
