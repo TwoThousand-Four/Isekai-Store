@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>add-figure</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" style="text-align: center;">Agregar figura</ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <h3 class="encabezado">Ingrese datos de la figura</h3>
+  <ion-item>
+    <ion-label class="normal" position="floating">Nombre</ion-label>
+    <ion-input class="normal" type="text" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="normal" position="floating">Altura</ion-label>
+    <ion-input class="normal" type="text" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="normal" position="floating">Precio</ion-label>
+    <ion-input class="normal" type="number" inputmode="numeric" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label class="normal">Foto:</ion-label>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="images"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-button style="margin: 30px;" expand="block" color="dark">Guardar</ion-button>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Inicio
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="search"></ion-icon>
+        Buscar
+      </ion-tab-button>
+      <ion-tab-button tab="profile" [routerLink]="['/profile']">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        Perfil
+      </ion-tab-button>
+      <ion-tab-button tab="help" [routerLink]="['/assistance']">
+        <ion-icon name="help"></ion-icon>
+        Ayuda
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
