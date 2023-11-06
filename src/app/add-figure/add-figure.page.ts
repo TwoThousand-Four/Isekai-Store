@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../services/firestore.service';
-import { AlertController, LoadingController, MenuController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-figure',
@@ -9,11 +8,7 @@ import { AlertController, LoadingController, MenuController, ToastController } f
 })
 export class AddFigurePage implements OnInit {
 
-  constructor(public firestoreService: FirestoreService,
-    public menuCtrl: MenuController,
-    public loadingController: LoadingController,
-    public toastController: ToastController,
-    public alertController: AlertController,) {}
+  constructor(public firestoreService: FirestoreService) { }
 
   ngOnInit() {}
 
@@ -25,10 +20,5 @@ export class AddFigurePage implements OnInit {
     const path = 'Figuras/';
     const id = '0001'
     this.firestoreService.createDoc(data, path, id)
-  }
-
-  openMenu() {
-    console.log('open menu');
-    this.menuCtrl.toggle('principal');
   }
 }

@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'add-figure',
     loadChildren: () => import('./add-figure/add-figure.module').then( m => m.AddFigurePageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
 
 
 ];

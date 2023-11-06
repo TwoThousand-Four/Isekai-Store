@@ -7,12 +7,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Agregar figura</ion-title>
-      <ion-buttons slot="start">
-        <ion-button (click)="openMenu()">
-           <ion-icon color="primary" slot="icon-only"  name="menu-sharp"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+      <ion-title size="large" style="text-align: center;">Agregar figura</ion-title>
     </ion-toolbar>
   </ion-header>
  
@@ -38,4 +33,25 @@
     </ion-buttons>
   </ion-item>
   <ion-button style="margin: 30px;" expand="block" color="dark">Guardar</ion-button>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+        Inicio
+      </ion-tab-button>
+      <ion-tab-button tab="search">
+        <ion-icon name="search"></ion-icon>
+        Buscar
+      </ion-tab-button>
+      <ion-tab-button tab="profile" [routerLink]="['/profile']">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        Perfil
+      </ion-tab-button>
+      <ion-tab-button tab="help" [routerLink]="['/assistance']">
+        <ion-icon name="help"></ion-icon>
+        Ayuda
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>

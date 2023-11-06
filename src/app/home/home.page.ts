@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -7,12 +7,9 @@ import { MenuController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  constructor(public menuCtrl : MenuController) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  openMenu() {
-    console.log('open menu');
-    this.menuCtrl.toggle('principal');
-}
+
 }
