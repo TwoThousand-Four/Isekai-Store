@@ -1,4 +1,6 @@
 export interface Figure {
-    titulo : string;
+    nombre : string;
+    altura : string;
     precio : number;
+    foto : string;
 }
