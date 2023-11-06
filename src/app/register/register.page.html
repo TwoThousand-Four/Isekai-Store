@@ -8,18 +8,15 @@
   <ion-content class="ion-padding">
     <ion-content>
       <ion-item>
-        <ion-input id="input" label="Nombre" label-placement="floating" fill="outline" placeholder="Juanito Perez"type="text" ></ion-input>
+        <ion-input id="input" label="Nombre" label-placement="floating" fill="outline" placeholder="Juanito Perez"type="text" [(ngModel)]="user.nombre"required ></ion-input>
       </ion-item> 
       <ion-item>
-        <ion-input id="input" label="Email" label-placement="floating" fill="outline" placeholder="juanitoperez@gmail.com"type="text" ></ion-input>
+        <ion-input id="input" label="Email" label-placement="floating" fill="outline" placeholder="juanitoperez@gmail.com"type="text" [(ngModel)]="user.email"required></ion-input>
       </ion-item> 
       <ion-item>
-        <ion-input id="input" label="Contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" ></ion-input>
+        <ion-input id="input" label="Contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" [(ngModel)]="user.password"required></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-input id="input" label="Repetir contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" ></ion-input>
-      </ion-item>
-      <ion-button class="ion-padding" color="primary" expand="block">Registrarse</ion-button> 
+      <ion-button class="ion-padding" color="primary" expand="block" (click)="register(user)">Registrarse</ion-button> 
     </ion-content> 
   </ion-content>
 </ion-content>

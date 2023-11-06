@@ -41,13 +41,11 @@
       </ion-header>
       <ion-content class="ion-padding"> 
         <ion-item>
-          <ion-input id="input" label="Email" label-placement="floating" fill="outline" placeholder="juanitoperez@gmail.com"type="text" required [(ngModel)]="usuario.email"></ion-input>
+          <ion-input id="input" label="Email" label-placement="floating" fill="outline" placeholder="juanitoperez@gmail.com"type="text" ></ion-input>
         </ion-item> 
-
         <ion-item>
-          <ion-input id="input" label="Contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" required [(ngModel)]="usuario.password"></ion-input>
+          <ion-input id="input" label="Contraseña" label-placement="floating" fill="outline" placeholder="***************"type="password" ></ion-input>
         </ion-item>
-        
         <ion-button class="ion-padding" color="primary" (click)="login()" (click)="modal.dismiss()">Iniciar sesión</ion-button> 
         <ion-button class="ion-padding" color="secondary" (click)="GoToRegister()" (click)="modal.dismiss()">Registrarse</ion-button> 
         <br>
