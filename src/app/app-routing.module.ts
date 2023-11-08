@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canActivate: [AngularFireAuthGuard]
   },
   {
     path: 'reset-pass',
@@ -21,8 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'assistance',
-    loadChildren: () => import('./assistance/assistance.module').then( m => m.AssistancePageModule)
-  },  {
+    loadChildren: () => import('./assistance/assistance.module').then( m => m.AssistancePageModule), canActivate: [AngularFireAuthGuard]
+  },
+  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
@@ -32,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule), canActivate: [AngularFireAuthGuard]
   },
 
 

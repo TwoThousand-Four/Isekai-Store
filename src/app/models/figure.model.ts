@@ -3,4 +3,6 @@ export interface Figure {
     altura : string;
     precio : number;
     foto : string;
+    id : string;
+    fecha : Date;
 }

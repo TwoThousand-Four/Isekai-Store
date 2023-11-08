@@ -1,9 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>add-figure</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -13,45 +7,59 @@
  
   <h3 class="encabezado">Ingrese datos de la figura</h3>
   <ion-item>
+
+<!-- Ingresar datos para agregar figura-->
     <ion-label class="normal" position="floating">Nombre</ion-label>
-    <ion-input class="normal" type="text" ></ion-input>
+    <ion-input [(ngModel)]="newFigure.nombre"class="normal" type="text" ></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label class="normal" position="floating">Altura</ion-label>
+    <ion-label [(ngModel)]="newFigure.altura"class="normal" position="floating">Altura</ion-label>
     <ion-input class="normal" type="text" ></ion-input>
   </ion-item>
   <ion-item>
     <ion-label class="normal" position="floating">Precio</ion-label>
-    <ion-input class="normal" type="number" inputmode="numeric" ></ion-input>
+    <ion-input [(ngModel)]="newFigure.precio"class="normal" type="number" inputmode="numeric" ></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label class="normal">Foto:</ion-label>
+    <ion-label class="normal">
+        Foto:
+    </ion-label>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon slot="icon-only" name="images"></ion-icon>
+         <label for="file-upload">
+           <ion-icon slot="icon-only" name="images"></ion-icon>
+         </label>
+          <input  (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file"  accept="image/*">
       </ion-button>
     </ion-buttons>
   </ion-item>
-  <ion-button style="margin: 30px;" expand="block" color="dark">Guardar</ion-button>
+  <ion-item>
+    <img class="image"  [src]="newFigure.foto">
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="guardarFigura()" style="margin: 30px;" expand="full" color="dark">Guardar</ion-button>
+  </ion-item>
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home" [routerLink]="['/home']">
-        <ion-icon name="home"></ion-icon>
-        Inicio
-      </ion-tab-button>
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
-        Buscar
-      </ion-tab-button>
-      <ion-tab-button tab="profile" [routerLink]="['/profile']">
-        <ion-icon name="person-circle-outline"></ion-icon>
-        Perfil
-      </ion-tab-button>
-      <ion-tab-button tab="help" [routerLink]="['/assistance']">
-        <ion-icon name="help"></ion-icon>
-        Ayuda
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+
+ <!--Tabs-->
+ <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button>
+      <ion-icon name="home" (click)="GoHome()"></ion-icon>
+      Inicio
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="search"></ion-icon>
+      Buscar
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="person-circle-outline" (click)="GoProfile()"></ion-icon>
+      Perfil
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="help" (click)="GoAssist()"></ion-icon>
+      Ayuda
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
 </ion-content>

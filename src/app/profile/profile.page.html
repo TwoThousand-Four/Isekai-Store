@@ -1,35 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
+      <ion-title size="large">Perfil</ion-title>
     </ion-toolbar>
   </ion-header>
 
 
-  <ion-tabs>
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="home" [routerLink]="['/home']">
-        <ion-icon name="home"></ion-icon>
-        Inicio
-      </ion-tab-button>
-      <ion-tab-button tab="search">
-        <ion-icon name="search"></ion-icon>
-        Buscar
-      </ion-tab-button>
-      <ion-tab-button tab="profile" [routerLink]="['/profile']">
-        <ion-icon name="person-circle-outline"></ion-icon>
-        Perfil
-      </ion-tab-button>
-      <ion-tab-button tab="help" [routerLink]="['/assistance']">
-        <ion-icon name="help"></ion-icon>
-        Ayuda
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+ <!--Tabs-->
+ <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button>
+      <ion-icon name="home" (click)="GoHome()"></ion-icon>
+      Inicio
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon name="person-circle-outline" (click)="GoProfile()"></ion-icon>
+      Perfil
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="help" (click)="GoAssist()"></ion-icon>
+      Ayuda
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
 </ion-content>

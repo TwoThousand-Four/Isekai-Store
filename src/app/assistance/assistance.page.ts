@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-assistance',
   templateUrl: './assistance.page.html',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssistancePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,) { }
 
   ngOnInit() {
+  }
+
+  GoHome(){
+    this.router.navigate(['/home']);
+  }
+  GoProfile(){
+      this.router.navigate(['/profile']);
+  }
+  GoAdd(){
+      this.router.navigate(['/add-figure']);
+  }
+  GoAssist(){
+      this.router.navigate(['/assistance']);
   }
 
 }
