@@ -3,9 +3,10 @@ import { FirestoreService } from '../services/firestore.service';
 import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 import { Figure } from '../models/figure.model';
 import { Router } from '@angular/router';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
 
-import { finalize } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { NavController } from '@ionic/angular';
+
 import { FirestorageService } from '../services/firestorage.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class AddFigurePage implements OnInit {
 
   newFigure!: Figure;
 
-  enableNewFigure = false;
+  enableNewFigure = true;
 
   private path = 'Figuras/';
 
@@ -34,7 +35,9 @@ export class AddFigurePage implements OnInit {
     public toastController: ToastController,
     public alertController: AlertController,
     public firestorageService: FirestorageService,
-    private router: Router,) { }
+    private router: Router,
+    private afAuth : AngularFireAuth,
+    private navCtrl : NavController,) { }
 
   ngOnInit() {
     this.getFiguras();
@@ -150,6 +153,12 @@ async newImageUpload(event: any) {
     }
 }
 
+LogOut(){
+  this.afAuth.signOut().then(data => {
+    console.log(data);})
+
+    this.navCtrl.navigateRoot("login")
+}
 
 
 }

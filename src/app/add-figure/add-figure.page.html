@@ -6,9 +6,8 @@
   </ion-header>
  
   <h3 class="encabezado">Ingrese datos de la figura</h3>
+  <!-- Ingresar datos para agregar figura-->
   <ion-item>
-
-<!-- Ingresar datos para agregar figura-->
     <ion-label class="normal" position="floating">Nombre</ion-label>
     <ion-input [(ngModel)]="newFigure.nombre"class="normal" type="text" ></ion-input>
   </ion-item>
@@ -48,10 +47,7 @@
       <ion-icon name="home" (click)="GoHome()"></ion-icon>
       Inicio
     </ion-tab-button>
-    <ion-tab-button>
-      <ion-icon name="search"></ion-icon>
-      Buscar
-    </ion-tab-button>
+
     <ion-tab-button>
       <ion-icon name="person-circle-outline" (click)="GoProfile()"></ion-icon>
       Perfil
@@ -59,6 +55,10 @@
     <ion-tab-button>
       <ion-icon name="help" (click)="GoAssist()"></ion-icon>
       Ayuda
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="log-out-outline" (click)="LogOut()"></ion-icon>
+      Cerrar sesión
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

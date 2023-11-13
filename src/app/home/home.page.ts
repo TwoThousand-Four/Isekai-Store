@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../services/firestore.service';
 import { Figure } from '../models/figure.model';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,10 @@ export class HomePage implements OnInit {
   private path = 'Figuras/';
   
   constructor(public firestoreService: FirestoreService,
-              private router: Router,) {this.loadFiguras();}
+              private router: Router,
+              private afAuth : AngularFireAuth,
+              private navCtrl : NavController,) {this.loadFiguras();}
+
   GoHome(){
       this.router.navigate(['/home']);
   }
@@ -36,4 +41,10 @@ export class HomePage implements OnInit {
     });
   }
 
+  LogOut(){
+    this.afAuth.signOut().then(data => {
+      console.log(data);})
+
+      this.navCtrl.navigateRoot("login")
+  }
 }

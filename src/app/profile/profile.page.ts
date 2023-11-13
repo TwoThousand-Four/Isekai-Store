@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -7,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
 
-  constructor(private router: Router,) { }
+  constructor(private router: Router,
+    private afAuth : AngularFireAuth,
+    private navCtrl : NavController,) { }
 
   ngOnInit() {
   }
@@ -23,5 +28,11 @@ export class ProfilePage implements OnInit {
   }
   GoAssist(){
       this.router.navigate(['/assistance']);
+  }
+  LogOut(){
+    this.afAuth.signOut().then(data => {
+      console.log(data);})
+
+      this.navCtrl.navigateRoot("login")
   }
 }
