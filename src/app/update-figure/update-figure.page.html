@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Actualizar Figura</ion-title>
      <ion-buttons slot="start">
-      <ion-back-button defaultHref="lista"></ion-back-button>
+      <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -44,10 +44,6 @@
   </ion-label>
   <ion-input type="text" name="txtImagen" required value="{{figure.foto}}" [(ngModel)]="figure.foto"></ion-input>
 </ion-item>
-<!--boton camara-->
-  <ion-item lines="full">
-    <ion-button expand="block">Abrir camara</ion-button>
-  </ion-item>
 <ion-item>
   <ion-button expand="block" color="success" (click)="updateFigure()"><ion-icon slot="start" name="construct-outline"></ion-icon>Actualizar!</ion-button>
   <ion-button (click)="deleteFigure()" expand="block" color="danger"><ion-icon name="trash-outline"></ion-icon>Eliminar!</ion-button>

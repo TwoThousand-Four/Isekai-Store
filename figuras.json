@@ -2,10 +2,10 @@
   "figuras": [
     {
       "id": 1,
-      "nombre": "Goku Ssj",
-      "altura": "15 cm",
-      "precio": "15000",
-      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/goku.jpg?raw=true"
+      "nombre": "Gogeta Ssj",
+      "altura": "18 cm",
+      "precio": "35000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/gogetassj.jpg?raw=true"
     },
     {
       "id": 2,
