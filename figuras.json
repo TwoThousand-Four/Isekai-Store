@@ -62,6 +62,20 @@
       "precio": "45990",
       "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/nezuko.jpg?raw=true",
       "id": "9"
+    },
+    {
+      "nombre": "Metal Cooler",
+      "altura": "18 cm",
+      "precio": "25000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/cooler.jpg?raw=true",
+      "id": "10"
+    },
+    {
+      "nombre": "Inosuke",
+      "altura": "23 cm",
+      "precio": "34990",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/inosuke.jpg?raw=true",
+      "id": "11"
     }
   ]
 }

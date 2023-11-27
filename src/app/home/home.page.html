@@ -7,16 +7,16 @@
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
+
   <br>
   <ion-list>
-    <ion-item *ngFor="let figure of figuras">
+    <ion-item *ngFor="let figure of figuras" [routerLink]="['detail/']+figure['id']">
       <ion-avatar ><img src="{{figure['foto']}}" alt=""></ion-avatar> - {{figure['nombre']}}
-      <a [routerLink]="['detail/']+figure['id']">ver</a>
     </ion-item>
   </ion-list>
 
- <!--Tabs-->
- <ion-tabs>
+<!--Tabs-->
+<ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button>
       <ion-icon name="home" (click)="GoHome()"></ion-icon>
