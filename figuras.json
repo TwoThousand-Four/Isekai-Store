@@ -1,0 +1,60 @@
+{
+  "figuras": [
+    {
+      "id": 1,
+      "nombre": "Goku Ssj",
+      "altura": "15 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/goku.jpg?raw=true"
+    },
+    {
+      "id": 2,
+      "nombre": "Naruto Uzumaki",
+      "altura": "30 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/naruto.jpg?raw=true"
+    },
+    {
+      "id": 3,
+      "nombre": "Itadori Yuuji",
+      "altura": "20 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/itadori.jpg?raw=true"
+    },
+    {
+      "id": 4,
+      "nombre": "Gojo Satoru",
+      "altura": "24 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/gojo.jpg?raw=true"
+    },
+    {
+      "id": 5,
+      "nombre": "Megumi Fushiguro",
+      "altura": "18 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/fushiguro.jpg?raw=true"
+    },
+    {
+      "id": 6,
+      "nombre": "Gohan Ssj",
+      "altura": "20 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/gohan.jpg?raw=true"
+    },
+    {
+      "id": 7,
+      "nombre": "Vegetto Ssj",
+      "altura": "15 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/vegetto.jpg?raw=true"
+    },
+    {
+      "id": 8,
+      "nombre": "Guts",
+      "altura": "25 cm",
+      "precio": "15000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/guts.jpg?raw=true"
+    }
+  ]
+}

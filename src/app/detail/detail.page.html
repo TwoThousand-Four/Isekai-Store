@@ -1,0 +1,56 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <div *ngIf="figure">
+      <ion-buttons slot="end">
+        <ion-button color="success" [routerLink]="['/update-figure/'+figure.id]" routerLinkActive="router-link-active">Actualizar Figura</ion-button>
+      </ion-buttons>
+    </div>
+   
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="lista"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="figure">
+    
+  <ion-card>
+    <img src="{{figure.foto}}" />
+    <ion-card-header>
+      <ion-card-title>{{figure.nombre}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    Altura: {{figure.altura}}
+    <br>
+    Precio: ${{figure.precio}}
+    </ion-card-content>
+  </ion-card>
+</div>
+ <!--Tabs-->
+ <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button>
+      <ion-icon name="home" (click)="GoHome()"></ion-icon>
+      Inicio
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon name="person-circle-outline" (click)="GoProfile()"></ion-icon>
+      Perfil
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="help" (click)="GoAssist()"></ion-icon>
+      Ayuda
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="log-out-outline" (click)="LogOut()"></ion-icon>
+      Cerrar sesión
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-content>
+

@@ -35,7 +35,15 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule), canActivate: [AngularFireAuthGuard]
+  },  {
+    path: 'detail',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
   },
+  {
+    path: 'update-figure',
+    loadChildren: () => import('./update-figure/update-figure.module').then( m => m.UpdateFigurePageModule)
+  },
+
 
 
 ];

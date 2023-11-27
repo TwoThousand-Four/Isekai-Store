@@ -1,0 +1,78 @@
+<ion-header mode="md">
+  <ion-toolbar>
+    <ion-title>Actualizar Figura</ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="lista"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <form>
+  <!--id figura-->
+  <ion-item lines="full">
+    <ion-label>
+      id:
+    </ion-label>
+    <ion-input type="text" name="txtId" required value="{{figure.id}}" [(ngModel)]="figure.id"></ion-input>
+  </ion-item>
+<!-- nombre figura-->
+<ion-item lines="full">
+  <ion-label>
+    Nombre:
+  </ion-label>
+  <ion-input type="text" name="txtNombre" required value="{{figure.nombre}}" [(ngModel)]="figure.nombre"></ion-input>
+</ion-item>
+<!--Altura-->
+<ion-item lines="full">
+  <ion-label>
+    Altura:
+  </ion-label>
+  <ion-input type="text" name="txtAltura" required value="{{figure.altura}}" [(ngModel)]="figure.altura"></ion-input>
+</ion-item>
+<!--Precio-->
+<ion-item lines="full">
+  <ion-label>
+    Precio:
+  </ion-label>
+  <ion-input type="text" name="txtPrecio" required value="{{figure.precio}}" [(ngModel)]="figure.precio"></ion-input>
+</ion-item>
+<!--imagen-->
+<ion-item lines="full">
+  <ion-label >
+    Imagen:
+  </ion-label>
+  <ion-input type="text" name="txtImagen" required value="{{figure.foto}}" [(ngModel)]="figure.foto"></ion-input>
+</ion-item>
+<!--boton camara-->
+<ion-item lines="full">
+  <ion-button expand="block">Abrir camara</ion-button>
+</ion-item>
+
+  <ion-button expand="block" color="success" (click)="updateFigure()"><ion-icon slot="start" name="construct-outline"></ion-icon>Actualizar!</ion-button>
+  <ion-button (click)="deleteFigure()" expand="block" color="danger"><ion-icon name="trash-outline"></ion-icon>Eliminar!</ion-button>
+
+ </form>
+ <!--Tabs-->
+ <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button>
+      <ion-icon name="home" (click)="GoHome()"></ion-icon>
+      Inicio
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon name="person-circle-outline" (click)="GoProfile()"></ion-icon>
+      Perfil
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="help" (click)="GoAssist()"></ion-icon>
+      Ayuda
+    </ion-tab-button>
+    <ion-tab-button>
+      <ion-icon name="log-out-outline" (click)="LogOut()"></ion-icon>
+      Cerrar sesión
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-content>

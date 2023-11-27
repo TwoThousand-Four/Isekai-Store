@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from '../services/firestore.service';
-import { Figure } from '../models/figure.model';
+import { FigureService } from '../services/figure.service';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { NavController } from '@ionic/angular';
+import { NavController, InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,13 +12,14 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  figuras: Figure[] = [];
-  private path = 'Figuras/';
-  
+  figuras = [];
   constructor(public firestoreService: FirestoreService,
               private router: Router,
               private afAuth : AngularFireAuth,
-              private navCtrl : NavController,) {this.loadFiguras();}
+              private navCtrl : NavController,
+              private loadCtrl : LoadingController,
+              private figureService : FigureService
+              ) {}
 
   GoHome(){
       this.router.navigate(['/home']);
@@ -33,14 +34,28 @@ export class HomePage implements OnInit {
       this.router.navigate(['/assistance']);
   }
 
-  ngOnInit() {}
-  loadFiguras() {
-    this.firestoreService.getCollection<Figure>(this.path).subscribe( res => {
-          // console.log(res);
-          this.figuras = res;
-    });
-  }
+  ngOnInit() {this.loadFigures();}
 
+  async loadFigures(event?:InfiniteScrollCustomEvent){
+    const loading=await this.loadCtrl.create({
+      message:"Cargando figuras.....",
+      spinner:"bubbles"
+    });
+    await loading.present();
+    this.figureService.tolistFigures().subscribe(
+      (res)=>{
+        loading.dismiss();
+        let listString=JSON.stringify(res)
+        this.figuras=JSON.parse(listString)
+        event?.target.complete();
+    },
+    (err)=>{
+      console.log(err.message)
+      loading.dismiss();
+    }
+    )
+    
+  }
   LogOut(){
     this.afAuth.signOut().then(data => {
       console.log(data);})

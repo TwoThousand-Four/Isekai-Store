@@ -7,37 +7,7 @@
  
   <h3 class="encabezado">Ingrese datos de la figura</h3>
   <!-- Ingresar datos para agregar figura-->
-  <ion-item>
-    <ion-label class="normal" position="floating">Nombre</ion-label>
-    <ion-input [(ngModel)]="newFigure.nombre"class="normal" type="text" ></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label [(ngModel)]="newFigure.altura"class="normal" position="floating">Altura</ion-label>
-    <ion-input class="normal" type="text" ></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label class="normal" position="floating">Precio</ion-label>
-    <ion-input [(ngModel)]="newFigure.precio"class="normal" type="number" inputmode="numeric" ></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label class="normal">
-        Foto:
-    </ion-label>
-    <ion-buttons slot="end">
-      <ion-button>
-         <label for="file-upload">
-           <ion-icon slot="icon-only" name="images"></ion-icon>
-         </label>
-          <input  (change)="newImageUpload($event)" id="file-upload" style="display: none" type="file"  accept="image/*">
-      </ion-button>
-    </ion-buttons>
-  </ion-item>
-  <ion-item>
-    <img class="image"  [src]="newFigure.foto">
-  </ion-item>
-  <ion-item>
-    <ion-button (click)="guardarFigura()" style="margin: 30px;" expand="full" color="dark">Guardar</ion-button>
-  </ion-item>
+
 
 
  <!--Tabs-->
