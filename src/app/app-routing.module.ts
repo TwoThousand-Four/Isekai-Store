@@ -30,18 +30,19 @@ const routes: Routes = [
   },
   {
     path: 'add-figure',
-    loadChildren: () => import('./add-figure/add-figure.module').then( m => m.AddFigurePageModule)
+    loadChildren: () => import('./add-figure/add-figure.module').then( m => m.AddFigurePageModule), canActivate: [AngularFireAuthGuard]
   },
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule), canActivate: [AngularFireAuthGuard]
-  },  {
-    path: 'detail',
-    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
   },
   {
-    path: 'update-figure',
-    loadChildren: () => import('./update-figure/update-figure.module').then( m => m.UpdateFigurePageModule)
+    path: 'detail/:id',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule), canActivate: [AngularFireAuthGuard]
+  },
+  {
+    path: 'update-figure/:id',
+    loadChildren: () => import('./update-figure/update-figure.module').then( m => m.UpdateFigurePageModule), canActivate: [AngularFireAuthGuard]
   },
 
 

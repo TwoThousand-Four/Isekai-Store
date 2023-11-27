@@ -8,7 +8,47 @@
   <h3 class="encabezado">Ingrese datos de la figura</h3>
   <!-- Ingresar datos para agregar figura-->
 
-
+  <form>
+    <!--id Figura-->
+    <ion-item lines="full">
+      <ion-label position="floating">
+        id:
+      </ion-label>
+      <ion-input type="text" name="txtId" required [(ngModel)]="figure.id"></ion-input>
+    </ion-item>
+  <!-- Nombre Figura-->
+  <ion-item lines="full">
+    <ion-label position="floating">
+      Nombre:
+    </ion-label>
+    <ion-input type="text" name="txtNombre" required [(ngModel)]="figure.nombre"></ion-input>
+  </ion-item>
+  <!--Altura-->
+  <ion-item lines="full">
+    <ion-label position="floating">
+      Altura:
+    </ion-label>
+    <ion-input type="text" name="txtAltura" required [(ngModel)]="figure.altura"></ion-input>
+  </ion-item>
+  <!--Precio-->
+  <ion-item lines="full">
+    <ion-label position="floating">
+      Precio:
+    </ion-label>
+    <ion-input type="text" name="txtPrecio" required [(ngModel)]="figure.precio"></ion-input>
+  </ion-item>
+  <!--imagen-->
+  <ion-item lines="full">
+    <ion-label position="floating">
+      Imagen:
+    </ion-label>
+    <ion-input type="text" name="txtImagen" required [(ngModel)]="figure.foto"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button expand="block" color="success" (click)="addFigure()">Capturar!</ion-button>
+  </ion-item>
+    
+   </form>
 
  <!--Tabs-->
  <ion-tabs>

@@ -55,7 +55,7 @@ export class UpdateFigurePage implements OnInit {
   }
   
   updateFigure(){
-    this.figureService.updateFigure(this.figure).subscribe()
+    this.figureService.updateFigure(this.figure).subscribe();
     this.router.navigateByUrl("/home")
   }
 

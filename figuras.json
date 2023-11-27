@@ -55,6 +55,13 @@
       "altura": "25 cm",
       "precio": "15000",
       "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/guts.jpg?raw=true"
+    },
+    {
+      "nombre": "nezuko",
+      "altura": "20 cm",
+      "precio": "45990",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/nezuko.jpg?raw=true",
+      "id": "9"
     }
   ]
 }

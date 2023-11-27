@@ -1,20 +1,17 @@
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header mode="md">
     <ion-toolbar>
-      <ion-icon name="home" style="height: 50px; width:50px"></ion-icon>
+      <ion-title>Figuras</ion-title>
+      <ion-buttons slot="end">
+        <ion-button color="success" [routerLink]="['/add-figure/']" routerLinkActive="router-link-active">Nueva Figura</ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
-
-  <ion-fab vertical="botton" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add" (click)="GoAdd()"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
+  <br>
   <ion-list>
-    <ion-item *ngFor="let figure of figuras" [routerLink]="['/detail/']+figure['id']">
-      <ion-avatar><img src="{{figure['foto']}}" alt=""></ion-avatar>
-      {{figure['nombre']}}
+    <ion-item *ngFor="let figure of figuras">
+      <ion-avatar ><img src="{{figure['foto']}}" alt=""></ion-avatar> - {{figure['nombre']}}
+      <a [routerLink]="['detail/']+figure['id']">ver</a>
     </ion-item>
   </ion-list>
 

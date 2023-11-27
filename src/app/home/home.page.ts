@@ -4,6 +4,8 @@ import { FigureService } from '../services/figure.service';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NavController, InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
+import { Figure } from '../models/figure.model';
+
 
 @Component({
   selector: 'app-home',
@@ -32,6 +34,9 @@ export class HomePage implements OnInit {
   }
   GoAssist(){
       this.router.navigate(['/assistance']);
+  }
+  GoDetail(){
+    this.router.navigate(['/detail/:id']);
   }
 
   ngOnInit() {this.loadFigures();}

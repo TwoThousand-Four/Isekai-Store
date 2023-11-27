@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController, ToastController, AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
-
+import { FigureService } from '../services/figure.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NavController } from '@ionic/angular';
-
+import { Figure } from '../models/figure.model';
 
 
 @Component({
@@ -14,14 +14,21 @@ import { NavController } from '@ionic/angular';
 })
 export class AddFigurePage implements OnInit {
 
-
+  figure:Figure={
+    nombre: "",
+    altura: "",
+    precio: 0,
+    foto: "",
+    id: 0
+  }
   constructor(
     public loadingController: LoadingController,
     public toastController: ToastController,
     public alertController: AlertController,
     private router: Router,
     private afAuth : AngularFireAuth,
-    private navCtrl : NavController,) { }
+    private navCtrl : NavController,
+    private figureService : FigureService,) { }
 
   ngOnInit() {
 
@@ -40,6 +47,10 @@ export class AddFigurePage implements OnInit {
       this.router.navigate(['/assistance']);
   }
 
+  addFigure(){
+    this.figureService.addFigure(this.figure).subscribe()
+    this.router.navigateByUrl("/home")
+  }
   
 
 LogOut(){
