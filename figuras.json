@@ -31,7 +31,7 @@
     {
       "id": 5,
       "nombre": "Megumi Fushiguro",
-      "altura": "18 cm",
+      "altura": "18 cm ",
       "precio": "15000",
       "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/fushiguro.jpg?raw=true"
     },
@@ -48,13 +48,6 @@
       "altura": "15 cm",
       "precio": "15000",
       "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/vegetto.jpg?raw=true"
-    },
-    {
-      "id": 8,
-      "nombre": "Guts",
-      "altura": "25 cm",
-      "precio": "15000",
-      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/guts.jpg?raw=true"
     },
     {
       "nombre": "nezuko",
@@ -76,6 +69,13 @@
       "precio": "34990",
       "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/inosuke.jpg?raw=true",
       "id": "11"
+    },
+    {
+      "nombre": "mickey",
+      "altura": "20 cm",
+      "precio": "30000",
+      "foto": "https://github.com/TwoThousand-Four/figuras/blob/main/mickey.jpg?raw=true",
+      "id": "15"
     }
   ]
 }

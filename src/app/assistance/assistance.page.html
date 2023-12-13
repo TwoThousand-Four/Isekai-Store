@@ -1,15 +1,41 @@
 <ion-content [fullscreen]="true">
+
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Ayuda</ion-title>
+    <ion-toolbar color="danger">
+      <ion-title size="large">Preguntas frecuentes</ion-title>
     </ion-toolbar>
   </ion-header>
-
-
-
-
-
+  <br>
+  <br>
+  <br>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>¿Quienes somos?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Isekai Store es una tienda online en la cual puedes comprar diversos tipos de figuras 
+        de tus animes y series favoritas.
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>¿Puedo hacer encargos especiales?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Si, los clientes se pueden comunicar a través de nuestro instagram y enviarnos un mensaje
+        en el cual indique la figura de anime o serie deseada para cotizar y llegar a un acuerdo
+      </div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>¿Que metodos de pago hay?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">En nuestra tienda puedes pagar ya sea con tarjetas de crédito o debito y con transferencias bancarias</div>
+    </ion-accordion>
+  </ion-accordion-group>
   <!--Tabs-->
+
+</ion-content>
+<ion-content>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button>
