@@ -36,13 +36,7 @@
     </application>
 
     <!-- Permissions -->
-    <meta-data android:name="com.google.android.geo.API_KEY" android:value="6Le9vssoAAAAAPKwC9abNoNIkc9sC08D54DUBoPr"/>
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
     <uses-feature android:name="android.hardware.location.gps" />
 
     <uses-permission android:name="android.permission.INTERNET" />
